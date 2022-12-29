@@ -1,5 +1,7 @@
 # GhostBackupper
 
+Back up your Ghost CMS instance easily!
+
 This tool can work in two modes:
 
 - CLI
