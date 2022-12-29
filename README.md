@@ -1,4 +1,9 @@
 # GhostBackupper
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/mrboombasticultra/ghostbackupper)
+![Docker Pulls](https://img.shields.io/docker/pulls/mrboombasticultra/ghostbackupper)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/mrboombasticultra/ghostbackupper)
+[![Go Report Card](https://goreportcard.com/badge/github.com/MrBoombastic/GhostBackupper)](https://goreportcard.com/report/github.com/MrBoombastic/GhostBackupper)
+[![CodeFactor](https://www.codefactor.io/repository/github/mrboombastic/ghostbackupper/badge)](https://www.codefactor.io/repository/github/mrboombastic/ghostbackupper)
 
 Back up your Ghost CMS instance easily!
 
