@@ -46,15 +46,17 @@ func Create(ctx *cli.Context) error {
 		return nil
 	}
 	logs.Info("Backed up successfully!")
-	err = upload(ctx)
-	if err != nil {
-		logs.Error(err.Error())
-		return nil
+	if ctx.String("mega_login") != "" && ctx.String("mega_password") != "" {
+		err = uploadToMega(ctx)
+		if err != nil {
+			logs.Error(err.Error())
+			return nil
+		}
 	}
 	return nil
 }
 
-func upload(ctx *cli.Context) error {
+func uploadToMega(ctx *cli.Context) error {
 	logs.Info("Logging into Mega")
 	client := mega.New()
 	err := client.Login(ctx.String("mega_login"), ctx.String("mega_password"))
