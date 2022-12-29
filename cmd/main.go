@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-const Version = "0.0.1"
+const Version = "0.0.2"
 
 func main() {
 	app := &cli.App{
@@ -18,6 +18,7 @@ func main() {
 		Commands: []*cli.Command{
 			{
 				Name:        "version",
+				Usage:       "Shows GhostBackupper version",
 				Description: "Shows GhostBackupper version",
 				Aliases:     []string{"v", "ver"},
 				Action: func(context *cli.Context) error {
@@ -27,6 +28,7 @@ func main() {
 			},
 			{
 				Name:        "backup",
+				Usage:       "Backs up whole Ghost - database and files",
 				Description: "Backs up whole Ghost - database and files",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
@@ -40,8 +42,13 @@ func main() {
 						Required: true,
 					},
 					&cli.StringFlag{
-						Name:     "db_pass",
+						Name:     "db_password",
 						Usage:    "Your MySQL server password",
+						Required: true,
+					},
+					&cli.StringFlag{
+						Name:     "db_database",
+						Usage:    "Your MySQL database name",
 						Required: true,
 					},
 					&cli.StringFlag{
@@ -53,11 +60,6 @@ func main() {
 						Name:     "mega_password",
 						Usage:    "Your Mega.nz password (only if you want to upload!)",
 						Required: false,
-					},
-					&cli.StringFlag{
-						Name:     "db_database",
-						Usage:    "Your MySQL database name",
-						Required: true,
 					},
 					&cli.UintFlag{
 						Name:  "db_port",

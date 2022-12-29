@@ -7,7 +7,14 @@ This tool can work in two modes:
 
 ## CLI
 
-Recommended Docker Compose configuration
+```bash
+"./ghostbackupper backup --db_host $DB_HOST --db_password $DB_PASSWORD --db_user $DB_USER --db_database $DB_DATABASE --db_port $DB_PORT --content $CONTENT --output $OUTPUT --mega_login $MEGA_LOGIN --mega_password $MEGA_PASSWORD"
+```
+## Docker `run`
+Use similarly as above. [Official Docker reference here.](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file)
+## Docker Compose
+
+Recommended Docker Compose configuration - everything in Docker
 
 ```yaml
 version: '3.1'
