@@ -3,11 +3,14 @@ module github.com/MrBoombastic/GhostBackupper
 go 1.19
 
 require (
+	github.com/JamesStewy/go-mysqldump v0.2.2
+	github.com/go-sql-driver/mysql v1.7.0
 	github.com/mholt/archiver/v4 v4.0.0-alpha.6
 	github.com/urfave/cli/v2 v2.23.7
 )
 
 require (
+	github.com/DATA-DOG/go-sqlmock v1.5.0 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5 // indirect
