@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: mrboombasticultra/ghostbackupper:${{env.GITHUB_REF_NAME}}
+          tags: mrboombasticultra/ghostbackupper:${{  github.ref_name }}
