@@ -6,7 +6,7 @@ require (
 	github.com/BOOMfinity/golog v1.0.5
 	github.com/JamesStewy/go-mysqldump v0.2.2
 	github.com/go-sql-driver/mysql v1.7.0
-	github.com/mholt/archiver/v4 v4.0.0-alpha.6
+	github.com/mholt/archiver/v4 v4.0.0-alpha.7
 	github.com/t3rm1n4l/go-mega v0.0.0-20220725095014-c4e0c2b5debf
 	github.com/urfave/cli/v2 v2.23.7
 )
@@ -17,7 +17,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/klauspost/compress v1.15.1 // indirect
+	github.com/klauspost/compress v1.15.5 // indirect
 	github.com/klauspost/pgzip v1.2.5 // indirect
 	github.com/nwaples/rardecode/v2 v2.0.0-beta.2 // indirect
 	github.com/pierrec/lz4/v4 v4.1.14 // indirect
