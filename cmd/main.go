@@ -30,27 +30,37 @@ func main() {
 				Description: "Backs up whole Ghost - database and files",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
-						Name:  "host",
+						Name:  "db_host",
 						Usage: "Your MySQL server address",
 						Value: "localhost",
 					},
 					&cli.StringFlag{
-						Name:     "username",
+						Name:     "db_user",
 						Usage:    "Your MySQL username",
 						Required: true,
 					},
 					&cli.StringFlag{
-						Name:     "password",
+						Name:     "db_pass",
 						Usage:    "Your MySQL server password",
 						Required: true,
 					},
 					&cli.StringFlag{
-						Name:     "database",
+						Name:     "mega_login",
+						Usage:    "Your Mega.nz login (only if you want to upload!)",
+						Required: false,
+					},
+					&cli.StringFlag{
+						Name:     "mega_password",
+						Usage:    "Your Mega.nz password (only if you want to upload!)",
+						Required: false,
+					},
+					&cli.StringFlag{
+						Name:     "db_database",
 						Usage:    "Your MySQL database name",
 						Required: true,
 					},
 					&cli.UintFlag{
-						Name:  "port",
+						Name:  "db_port",
 						Value: 3306,
 						Usage: "Your MySQL server port",
 					},
@@ -62,7 +72,7 @@ func main() {
 					&cli.StringFlag{
 						Name:    "output",
 						Aliases: []string{"file", "f"},
-						Usage:   "Output path",
+						Usage:   "Output filename (not path!)",
 						Value:   "backup.tar.gz",
 					},
 				},

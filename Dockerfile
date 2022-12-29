@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine
+FROM golang:1.19-alpine as builder
 WORKDIR /app
 
 COPY go.mod ./
@@ -6,15 +6,11 @@ COPY go.sum ./
 
 RUN go mod download
 
-COPY *.go ./
+COPY . ./
 
-ENV HOST localhost
-ENV PASSWORD password
-ENV DATABASE ghost
-ENV PORT 3306
-ENV CONTENT /var/www/ghost/content
-ENV OUTPUT backup.tar.gz
+RUN go build -o ghostbackupper cmd/main.go
 
-RUN go build -o /ghostbackupper
+FROM alpine:latest as backup
+COPY --from=builder /app/ghostbackupper .
 
-CMD [ "/ghostbackupper --host $HOST --password $PASSWORD --database $DATABASE --port $PORT --content $CONTENT --output $OUTPUT" ]
+CMD [ "sh", "-c", "./ghostbackupper backup --db_host $DB_HOST --db_password $DB_PASSWORD --db_username $DB_USER --db_database $DB_DATABASE --db_port $DB_PORT --content $CONTENT --output $OUTPUT --mega_login $MEGA_LOGIN --mega_password $MEGA_PASSWORD" ]
