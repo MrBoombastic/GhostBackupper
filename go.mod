@@ -3,7 +3,7 @@ module github.com/MrBoombastic/GhostBackupper
 go 1.19
 
 require (
-	github.com/BOOMfinity/golog v1.0.5
+	github.com/BOOMfinity/golog v1.0.6
 	github.com/JamesStewy/go-mysqldump v0.2.2
 	github.com/go-sql-driver/mysql v1.7.0
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
