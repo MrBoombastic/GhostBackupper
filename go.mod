@@ -8,7 +8,7 @@ require (
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/mholt/archiver/v4 v4.0.0-alpha.8
 	github.com/t3rm1n4l/go-mega v0.0.0-20220725095014-c4e0c2b5debf
-	github.com/urfave/cli/v2 v2.25.3
+	github.com/urfave/cli/v2 v2.25.6
 )
 
 require (
