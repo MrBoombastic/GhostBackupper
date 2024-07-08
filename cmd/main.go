@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-const Version = "0.0.4"
+const Version = "0.0.6"
 
 func main() {
 	cli.VersionPrinter = func(cCtx *cli.Context) {
