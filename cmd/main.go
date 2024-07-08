@@ -8,24 +8,23 @@ import (
 	"os"
 )
 
-const Version = "0.0.3"
+const Version = "0.0.4"
 
 func main() {
+	cli.VersionPrinter = func(cCtx *cli.Context) {
+		fmt.Printf("GhostBackupper version %s\n", cCtx.App.Version)
+	}
+	cli.VersionFlag = &cli.BoolFlag{
+		Name:    "version",
+		Aliases: []string{"v"},
+		Usage:   "Shows GhostBackupper version",
+	}
 	app := &cli.App{
 		Name:      "ghostbackupper",
 		Usage:     "Simple GhostCMS backup tool",
 		UsageText: "ghostbackupper <command> <options...> - run 'ghostbackupper <command> --help' for more",
+		Version:   Version,
 		Commands: []*cli.Command{
-			{
-				Name:        "version",
-				Usage:       "Shows GhostBackupper version",
-				Description: "Shows GhostBackupper version",
-				Aliases:     []string{"v", "ver"},
-				Action: func(context *cli.Context) error {
-					fmt.Printf("GhostBackupper version %v. Choo-choo!", Version)
-					return nil
-				},
-			},
 			{
 				Name:        "backup",
 				Usage:       "Backs up whole Ghost - database and files",
@@ -67,14 +66,15 @@ func main() {
 						Usage: "Your MySQL server port",
 					},
 					&cli.StringFlag{
-						Name:     "content",
-						Usage:    "Ghost's 'content' directory path",
-						Required: true,
+						Name:      "content",
+						Usage:     "Ghost's 'content' directory path",
+						TakesFile: true,
+						Required:  true,
 					},
 					&cli.StringFlag{
 						Name:    "output",
 						Aliases: []string{"file", "f"},
-						Usage:   "Output filename (not path!)",
+						Usage:   "Output filename (not path!). Unix epoch will be appended to it at the beginning.",
 						Value:   "backup.tar.gz",
 					},
 				},

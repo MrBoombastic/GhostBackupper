@@ -1,18 +1,16 @@
 module github.com/MrBoombastic/GhostBackupper
 
-go 1.19
+go 1.22
 
 require (
 	github.com/BOOMfinity/golog v1.0.6
-	github.com/JamesStewy/go-mysqldump v0.2.2
-	github.com/go-sql-driver/mysql v1.7.1
+	github.com/jarvanstack/mysqldump v0.7.0
 	github.com/mholt/archiver/v4 v4.0.0-alpha.8
 	github.com/t3rm1n4l/go-mega v0.0.0-20220725095014-c4e0c2b5debf
 	github.com/urfave/cli/v2 v2.27.2
 )
 
 require (
-	github.com/DATA-DOG/go-sqlmock v1.5.0 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/bodgit/plumbing v1.2.0 // indirect
 	github.com/bodgit/sevenzip v1.3.0 // indirect
@@ -20,6 +18,7 @@ require (
 	github.com/connesc/cipherio v0.2.1 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
 	github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5 // indirect
+	github.com/go-sql-driver/mysql v1.7.1 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
